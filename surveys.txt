@@ -1,0 +1,75 @@
+Name a gift kids don’t want to open on Christmas morning.
+Underwear	31	Handmade Sweater/Scarf	6
+Socks	27	Puzzles	2
+Hygeine Products	12		
+Books	6		
+Name one of Santa’s reindeer.
+Rudolph	32	Cupid	9
+Comet	14	Prancer	6
+Donnor	12	Dasher	4
+Blitzen	11	Vixen	3
+Name someone who was at the first Christmas.
+Jesus	35	Wise Men	6
+Mary	27	Angels	3
+Joseph	13	Animals	2
+Shepherds	8		
+Name a drink that might be served at a Christmas party.
+Eggnog	26	Soft Drinks	10
+Hot Cocoa	21	Punch	6
+Apple Cider	14		
+Adult Beverages	13		
+Name a state someone might travel to for Christmas vacation.
+Hawaii	35	Alaska	6
+New York	23	Illinois	4
+Florida	11	Washington	2
+Colorado	7		
+Name a Christmas Eve tradition for families.
+Opening one present	35	Putting cookies out for Santa	6
+Dinner at Grandma’s	20	Looking at Christmas lights	4
+Going to church	11	Watching Christmas movies	3
+Reading the Bible story	7		
+Name a gift that’s difficult to wrap.
+Basketball	34	A Bike	6
+Football	19		
+Stuffed Animals	14		
+A Pet	7		
+Name something that’s on every mom’s Christmas wishlist.
+Babysitting	24	Family Portrait	6
+Sleep/Nap	18	Clothing/Pajamas	6
+Spa Day	15	Jewelry	5
+Gift Card	8		
+Name a place that’s open on Christmas Day.
+Walmart/Grocery store	23	Movie Theater	8
+Gas Station	20	Airport	5
+Mcdonald’s/Fast Food	19	Hospital	3
+Waffle House/Denny’s	12	Hotel	2
+Name a dish people enjoy during Christmas dinner.
+Ham	27	Stuffing/Dressing	9
+Turkey	19	Cranberry Sauce	7
+Yams/Sweet Potatoes	14	Green Bean Casserole	5
+Potatoes	10		
+Name an item you’d need to dress up as Santa Clause.
+Santa Hat	40	Red Pants/Belt	5
+Beard	24	Suspenders	2
+Big Belly	9	Black Boots	2
+Red Coat	8		
+Name a classic kid’s Christmas movie.
+“Home Alone”	23	“A Christmas Story”	8
+“Elf”	22	“Frosty the Snowman”	6
+“The Grinch”	14	“Rudolph the Red-Nosed Reindeer”	5
+“Charlie Brown Christmas”	9		
+Name a popular Christmas carol.
+“We Wish You a Merry Christmas”	21	“Joy to the World”	8
+“Jingle Bells”	18	“Santa Claus Is Comin’ to Town”	7
+“Frosty the Snowman”	15	“Holly Jolly Christmas	7
+“Deck the Halls”	10	“Silent Night”	5
+Name something people might start doing on Decemeber 1st.
+Listening to Christmas music	29	Sending Christmas cards	7
+Christmas shopping	23	Baking Christmas cookies	4
+Decorating the Christmas Tree	16		
+Putting up Christmas lights	12		
+Name a dessert people eat a lot of at Christmastime.
+Cookies	54	Fudge	5
+Pie	12	Candy/Candy Canes	4
+Pudding	7	Gingerbread	2
+Fruitcake	6		
