@@ -14,6 +14,7 @@ from time import sleep
 
 tkWindow = tk.Tk()
 ogBack = tkWindow.cget("background")
+# tkWindow.geometry("2000x1250")
 # tk.Grid.columnconfigure(tkWindow, index=0, weight=1)
 
 def buildGUI():
@@ -23,13 +24,13 @@ def buildGUI():
 
     title = "Depatie Family Feud!\nChristmas Edition"
     color = "Red"
-    greeting = tk.Label(text=title, font="Arial 40 bold", relief="ridge", padx=20, fg=color)
+    greeting = tk.Label(text=title, font="Arial 100 bold", relief="ridge", padx=20, fg=color)
     greeting.pack()
     # canvas = tk.Canvas(tkWindow, width=435, height=275)
     # canvas.pack()
     # img = ImageTk.PhotoImage(Image.open("PROlogo.png"))
     # canvas.create_image(5, 5, anchor='nw', image=img)
-    start_button = tk.Button(tkWindow, text="Start",
+    start_button = tk.Button(tkWindow, text="Start", height='5', width='20', font='Arial 40', relief='ridge', bd='3',
                              command=lambda: handle_start(start_button, greeting))
     start_button.pack()
     # TODO: try the method of using after in test.py to oscillate the greeting label color.
@@ -50,15 +51,16 @@ def buildGUI():
 #         pass
 
 def handle_start(start_button, greeting):
+    # TODO: resize if time available
     start_button.destroy()
     greeting.destroy()
-    t1Label = tk.Label(tkWindow, text="Family 1: ", font="Arial 12 bold", relief="ridge", padx=20)
+    t1Label = tk.Label(tkWindow, text="Family 1: ", font="Arial 12 bold", relief="ridge", padx=100)
     t1Label.grid(row=0, column=0, sticky='w')
-    t1Entry = tk.Entry(tkWindow)
+    t1Entry = tk.Entry(tkWindow, width=100)
     t1Entry.grid(row=0, column=1, sticky='w')
-    t2Label = tk.Label(tkWindow, text="Family 2: ", font="Arial 12 bold", relief="ridge", padx=20)
+    t2Label = tk.Label(tkWindow, text="Family 2: ", font="Arial 12 bold", relief="ridge", padx=100)
     t2Label.grid(row=1, column=0, sticky='w')
-    t2Entry = tk.Entry(tkWindow)
+    t2Entry = tk.Entry(tkWindow, width=100)
     t2Entry.grid(row=1, column=1, sticky='w')
     sub_button = tk.Button(tkWindow, text="Submit",
                            command=lambda: handle_sub(sub_button, t1Label, t2Label, t1Entry, t2Entry))
@@ -82,7 +84,7 @@ def startGame(score, q, qnum):
     surveyFrame.grid(row=0, column=0, pady=20)
     qLabels = []
     for i in range(len(q[qnum].ans)):
-        qLabels.append(tk.Label(surveyFrame, text=i+1, font="Arial 12 bold", relief="ridge", padx=20))
+        qLabels.append(tk.Label(surveyFrame, text=i+1, font="Arial 20 bold", relief="ridge", padx=20, width=40, height=5))
         if i > 3:
             qLabels[i].grid(row=i-4, column=1)
         else:
@@ -92,25 +94,25 @@ def startGame(score, q, qnum):
     scoreFrame.grid(row=1, column=0, pady=20)
     strike1Frame = tk.Frame(scoreFrame)
     strike2Frame = tk.Frame(scoreFrame)
-    t1 = tk.Label(scoreFrame, text=score.team1, font="Arial 12 bold", relief="ridge", padx=20)
-    t2 = tk.Label(scoreFrame, text=score.team2, font="Arial 12 bold", relief="ridge", padx=20)
-    t1score = tk.Label(scoreFrame, text=score.score1, font="Arial 12 bold", relief="ridge", padx=20)
-    t2score = tk.Label(scoreFrame, text=score.score2, font="Arial 12 bold", relief="ridge", padx=20)
+    t1 = tk.Label(scoreFrame, text=score.team1, font="Arial 20 bold", relief="ridge", padx=20, width=15, height=5)
+    t2 = tk.Label(scoreFrame, text=score.team2, font="Arial 20 bold", relief="ridge", padx=20, width=15, height=5)
+    t1score = tk.Label(scoreFrame, text=score.score1, font="Arial 20 bold", relief="ridge", padx=20, width=15, height=5)
+    t2score = tk.Label(scoreFrame, text=score.score2, font="Arial 20 bold", relief="ridge", padx=20, width=15, height=5)
 
-    pLabel = tk.Label(scoreFrame, text=score.points, font="Arial 12 bold", relief="ridge", padx=20)
+    pLabel = tk.Label(scoreFrame, text=score.points, font="Arial 20 bold", relief="ridge", padx=20, width=15, height=5)
     t1.grid(row=0, column=0, padx=20)
     t1score.grid(row=1, column=0)
     strike1Frame.grid(row=2, column=0, pady=10)
     strikes1 = []
     for i in range(3):
-        strikes1.append(tk.Label(strike1Frame, text="X", font="Arial 12 bold", relief="ridge", padx=10, fg="gray"))
+        strikes1.append(tk.Label(strike1Frame, text="X", font="Arial 100 bold", relief="ridge", padx=10, fg="gray"))
         strikes1[i].grid(row=0, column=i)
     t2.grid(row=0, column=5, padx=20)
     t2score.grid(row=1, column=5)
     strike2Frame.grid(row=2, column=5, pady=10)
     strikes2 = []
     for i in range(3):
-        strikes2.append(tk.Label(strike2Frame, text="X", font="Arial 12 bold", relief="ridge", padx=10, fg="gray"))
+        strikes2.append(tk.Label(strike2Frame, text="X", font="Arial 100 bold", relief="ridge", padx=10, fg="gray"))
         strikes2[i].grid(row=0, column=i)
     pLabel.grid(row=0, column=3)
 
@@ -261,7 +263,4 @@ def nextQuestion(admin, score, q, qnum):
 buildGUI()
 
 #TODO: handle if both active buttons are pressed
-#TODO: bigger screen- with bigger widgets
-#TODO: makes X's bigger or have big X image pop on screen
-#TODO: Standardize the size of the questions
 #TODO: Add sound effects? Will require research
