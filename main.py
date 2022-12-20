@@ -3,9 +3,8 @@
 # Date: 12/3/2022
 
 import tkinter as tk
-from PIL import ImageTk, Image
-from tkinter import messagebox as mb
-import time
+from multiprocessing import Process
+from playsound import playsound
 
 import survey
 import scoreboard
@@ -14,6 +13,9 @@ from time import sleep
 
 tkWindow = tk.Tk()
 ogBack = tkWindow.cget("background")
+global x
+x = Process(target=playsound, args=["sounds/FFtheme.mp3"])
+
 # tkWindow.geometry("2000x1250")
 # tk.Grid.columnconfigure(tkWindow, index=0, weight=1)
 
@@ -35,25 +37,26 @@ def buildGUI():
     start_button.pack()
     # TODO: try the method of using after in test.py to oscillate the greeting label color.
     # greeting.after(1000, greetingFlip(color, greeting))
+    x.start()
     tkWindow.mainloop()
 
+# def greetingFlip():
+#     global greeting
+#     global color
+#     if color == "Red":
+#         color = "Green"
+#         greeting.config(fg=color)
+#     elif color == "Green":
+#         color = "Red"
+#         greeting.config(fg=color)
 
-# def greetingFlip(color, greeting):
-#     try:
-#         if color == "Red":
-#             color = "Green"
-#             greeting.config(fg=color)
-#         elif color == "Green":
-#             color = "Red"
-#             greeting.config(fg=color)
-#         greeting.after(1000, greetingFlip(color, greeting))
-#     except RecursionError as e:
-#         pass
+    # greeting.after(1000, greetingFlip)
 
 def handle_start(start_button, greeting):
     # TODO: resize if time available
     start_button.destroy()
     greeting.destroy()
+    x.kill()
     t1Label = tk.Label(tkWindow, text="Family 1: ", font="Arial 12 bold", relief="ridge", padx=100)
     t1Label.grid(row=0, column=0, sticky='w')
     t1Entry = tk.Entry(tkWindow, width=100)
@@ -184,6 +187,8 @@ def readSurveys():
 
 def handleQButton(i, buttons, q, qnum, label, score, pLabel, pointTotal, t1score, t2score):
     label.config(text=q[qnum].ans[i] + "\t\t" + str(q[qnum].points[i]), bg="green", fg="white")
+    p = Process(target=playsound, args=["sounds/09 Clang.mp3"])
+    p.start()
     if score.winner == True:
         buttons[i].destroy()
         return
@@ -210,6 +215,8 @@ def handleQButton(i, buttons, q, qnum, label, score, pLabel, pointTotal, t1score
     buttons[i].destroy()
 
 def strikeHandle(t1, t2, t1score, t2score, strikes, score):
+    p = Process(target=playsound, args=["sounds/11 Strike.mp3"])
+    p.start()
     if score.active == score.team1:
         score.strikes1 += 1
         for i in range(score.strikes1):
